@@ -1,0 +1,46 @@
+:root {
+  --primary: #06d6a0;
+  --secondry: #118ab2;
+}
+.container {
+  background-color: #06d6a0;
+  padding: 0.7rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* brand / logo */
+.footer__brand {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-family: Viga;
+  font-size: 30px;
+}
+.footer__desk {
+  margin-top: -1rem;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .container {
+    text-align: left;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer__brand {
+    font-size: 40px;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 0.9rem 2rem;
+  }
+}
