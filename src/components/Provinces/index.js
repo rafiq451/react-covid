@@ -16,10 +16,10 @@ const Provinces = (props) => {
             <thead>
               <tr>
                 <th className={style.th}>Provinsi</th>
-                <th className={style.th}>Positif</th>
-                <th className={style.th}>Sembuh</th>
-                <th className={style.th}>Dirawat</th>
+                <th className={style.th}>sembuh</th>
+                <th className={style.th}>positif</th>
                 <th className={style.th}>Meninggal</th>
+                <th className={style.th}>Dirawat</th>
               </tr>
             </thead>
             <tbody>

@@ -53,8 +53,8 @@ const From = (props) => {
               <br />
               <select className={style.from__input} id="status" value={status} onChange={(event) => setStatus(event.target.value)}>
                 <option value="">-- Pilih Status --</option>
-                <option value="sembuh">sembuh</option>
                 <option value="kasus">kasus</option>
+                <option value="sembuh">sembuh</option>
                 <option value="meninggal">meninggal</option>
                 <option value="dirawat">dirawat</option>
               </select>
