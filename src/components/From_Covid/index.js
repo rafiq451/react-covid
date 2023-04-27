@@ -1,18 +1,14 @@
 import style from './From.module.css';
 import img from './from_img.svg';
-// import data from '../../utils/constants';
-// import Kota from './kota';
 import { useState } from 'react';
-// import Status from '../Status';
+
 const From = (props) => {
   const { dataCovid, settProvinces } = props;
 
   const [province, setKota] = useState('');
   const [status, setStatus] = useState('');
   const [jumlah, setJumlah] = useState('');
-  console.log(jumlah);
-  console.log(status);
-  // const [provinces, setCovidData] = useState(data.provinces);
+
   function updateProvinces() {
     const index = dataCovid.findIndex((item) => item.kota === province);
     const foundProvince = dataCovid.find((item) => item.kota === province);
@@ -21,16 +17,13 @@ const From = (props) => {
       [status]: parseInt(foundProvince[status]) + parseInt(jumlah),
     };
     settProvinces([...dataCovid]);
-    console.log(index);
-    console.log(foundProvince);
   }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     updateProvinces();
-    // console.log(`Kota: ${province}, Status: ${status}, Jumlah: ${jumlah}`);
-    // console.log(`${jumlah}`);
   };
-  // const status = Status;
+
   return (
     <div className={style.container}>
       <section className={style.from}>
@@ -39,7 +32,7 @@ const From = (props) => {
         </div>
         <div className={style.from__right}>
           <h2 className={style.right__title}>From Covid</h2>
-          <form onChange={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div className="from_grup">
               <label className={style.from__label} htmlFor="kota">
                 Provinsi
@@ -47,10 +40,8 @@ const From = (props) => {
               <br />
               <select className={style.from__input} id="provinsi" value={province} onChange={(event) => setKota(event.target.value)}>
                 <option value="">-- Pilih Provinsi --</option>
-                {dataCovid.map((row, index) => (
-                  <option key={index} value={row.kota}>
-                    {row.kota}
-                  </option>
+                {dataCovid.map((row) => (
+                  <option key={row.kota}>{row.kota}</option>
                 ))}
               </select>
             </div>

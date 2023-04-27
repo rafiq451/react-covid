@@ -24,6 +24,7 @@
 @media (min-width: 768px) {
   .container {
     text-align: left;
+    margin-top: -1.7rem;
   }
   .footer {
     display: flex;
