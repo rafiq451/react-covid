@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
-import StyleProvice from './province.modules';
+import StyleTable from './tablepro.modules';
+import store from '../store';
 
-const Provinces = () => {
-  const data = useSelector((state) => state.covid.covid);
-  // console.log(data);
-
+const TablePro = () => {
+  // const { proCovid } = props;
+  const proCovid = useSelector((store) => store.provinsi.provinsi);
   return (
-    <StyleProvice>
+    <StyleTable>
       <section className="table">
         <div className="table__top">
           <h1 className="top__title">Provinsi</h1>
@@ -24,14 +24,14 @@ const Provinces = () => {
               </tr>
             </thead>
             <tbody>
-              {data &&
-                data.map((row, index) => (
+              {proCovid.regions &&
+                proCovid.regions.map((row, index) => (
                   <tr key={index}>
-                    <td className="td">{row.kota}</td>
-                    <td className="td">{row.sembuh}</td>
-                    <td className="td">{row.kasus}</td>
-                    <td className="td">{row.meninggal}</td>
-                    <td className="td">{row.dirawat}</td>
+                    <td className="td">{row.name}</td>
+                    <td className="td">{row.numbers.recovered}</td>
+                    <td className="td">{row.numbers.confirmed}</td>
+                    <td className="td">{row.numbers.death}</td>
+                    <td className="td">{row.numbers.treatment}</td>
                   </tr>
                 ))}
             </tbody>
@@ -40,7 +40,8 @@ const Provinces = () => {
           <p>{provinces.total_province}</p> */}
         </div>
       </section>
-    </StyleProvice>
+    </StyleTable>
   );
 };
-export default Provinces;
+
+export default TablePro;

@@ -1,20 +1,20 @@
 const data = {
-  last_update: "2022-03-31",
+  last_update: '2022-03-31',
   indonesia: [
     {
-      status: "Positif",
+      status: 'Positif',
       total: 6012818,
-      detail: "https://covid19.mathdro.id/api/countries/indonesia/confirmed",
+      detail: 'https://covid19.mathdro.id/api/countries/indonesia/confirmed',
     },
     {
-      status: "Sembuh",
+      status: 'Sembuh',
       total: 5750802,
-      detail: "https://covid19.mathdro.id/api/countries/indonesia/recovered",
+      detail: 'https://covid19.mathdro.id/api/countries/indonesia/recovered',
     },
     {
-      status: "Meninggal",
+      status: 'Meninggal',
       total: 155089,
-      detail: "https://covid19.mathdro.id/api/countries/indonesia/deaths",
+      detail: 'https://covid19.mathdro.id/api/countries/indonesia/deaths',
     },
   ],
 };

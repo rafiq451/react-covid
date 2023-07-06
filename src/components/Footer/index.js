@@ -1,16 +1,17 @@
-import style from './Footer.module.css';
+// import style from './Footer.module.css';
 import Menu from '../Menu';
+import StyledFooter from './footer.modules';
 function Footer() {
   return (
-    <div className={style.container}>
-      <nav className={style.footer}>
+    <StyledFooter>
+      <nav className="footer">
         <div>
-          <h1 className={style.footer__brand}>Covid ID</h1>
-          <p className={style.footer__desk}>Developed by M.Rafiq123</p>
+          <h1 className="footer__brand">Covid ID</h1>
+          <p className="footer__desk">Developed by M.Rafiq123</p>
         </div>
         <Menu />
       </nav>
-    </div>
+    </StyledFooter>
   );
 }
 

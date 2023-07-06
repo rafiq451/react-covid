@@ -1,31 +1,36 @@
-import Footer from '../components/Footer';
 import Herro from '../components/Herro';
-import Navbar from '../components/Navbar';
-import Indonesia from '../components/Indonesia';
-import Provinces from '../components/Provinces';
-import From from '../components/From_Covid/index.js';
-import { useState } from 'react';
-import data from '../utils/constants/provinces';
-function Main() {
-  const [dataCovid, settProvinces] = useState(data.provinces);
-  // const [province, setKota] = useState('');
-
-  return (
-    <main>
-      <Herro />
-      <Indonesia />
-      <Provinces dataCovid={dataCovid} />
-      <From dataCovid={dataCovid} settProvinces={settProvinces} />
-    </main>
-  );
-}
+// import Indonesia from '../components/Indonesia';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import ENPOINTS from '../utils/constants/enpoints';
+import Regions from '../components/Regions';
+import DataGlobal from '../components/Global';
+import { useDispatch } from 'react-redux';
+import { updateGlobal } from '../components/Features/CovidSlice/gloSlice';
 
 function Home() {
+  // const [regiCovid, setRegions] = useState([])
+  // const [gloCovid, setglobal] = useState([]);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getGlobal();
+  }, []);
+
+  async function getGlobal() {
+    const response = await axios(ENPOINTS.GLOBAL);
+    dispatch(updateGlobal(response.data));
+    // setglobal(response.data);
+    // console.log(response.data);
+  }
+
   return (
     <>
-      <Navbar />
-      <Main />
-      <Footer />
+      <Herro />
+      <DataGlobal title="Global Situation" />
+      {/* <Indonesia global={global} title="indohayu" /> */}
+      <Regions title="Situation By Regions" deskripsi="Bacaan Pilihan Covid" />
     </>
   );
 }

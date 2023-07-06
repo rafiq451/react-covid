@@ -1,10 +1,9 @@
-// import style from './indonesia.module.css';
+// import style from '../Indonesia/indonesia.module.css';
 import { useSelector } from 'react-redux';
 import Indo from '../Indo.js';
-// import data from '../../utils/constants/indonesia';
 import { styled } from 'styled-components';
 import store from '../store/index.js';
-const StyleIndonesia = styled.div`
+const StyleGlobal = styled.div`
   padding: 1rem;
   margin: 0 auto;
   text-align: center;
@@ -48,27 +47,27 @@ const StyleIndonesia = styled.div`
     }
   }
 `;
-const Indonesia = (props) => {
-  const indoCovid = useSelector((store) => store.indonesia.indonesia);
-  // console.log(indoCovid);
 
-  // console.log(indoCovid.indonesia);
+const DataGlobal = (props) => {
+  // const { gloCovid } = props;
+  const gloCovid = useSelector((store) => store.global.global);
+  // console.log(gloCovid);
   return (
-    <StyleIndonesia>
+    <StyleGlobal>
       <section className="indo">
         <div className="indo__top">
           <h1>{props.title}</h1>
-          <p className="indo__deskripsi">Data Covid Berdasarkan Indonesia</p>
+          <p className="indo__deskripsi">Data Covid Berdasarkan Data Global</p>
         </div>
         {/* <p>{indonesia.last_update}</p> */}
         <div className="indo__bottom">
-          {indoCovid.indonesia &&
-            indoCovid.indonesia.map((indo, index) => {
+          {gloCovid.global &&
+            gloCovid.global.map((indo, index) => {
               return <Indo key={index} indo={indo} />;
             })}
         </div>
       </section>
-    </StyleIndonesia>
+    </StyleGlobal>
   );
 };
-export default Indonesia;
+export default DataGlobal;
