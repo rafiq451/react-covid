@@ -7,12 +7,12 @@ const StyleProvice = styled.div`
     font-family: Viga;
     font-weight: 400;
     font-size: 40px;
-    color: var(--primary);
+    color: #06d6a0;
   }
   .top__deskripsi {
     font-family: Poppins;
     margin-top: -1.5rem;
-    color: var(--secondry);
+    color: #118ab2;
   }
   .table__container {
     border-collapse: collapse;
@@ -45,7 +45,7 @@ const StyleProvice = styled.div`
   }
 
   .th {
-    background-color: var(--primary);
+    background-color: #06d6a0;
     color: white;
     border-top: 1px solid #ddd;
     border-left: 1px solid #ddd;

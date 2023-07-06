@@ -8,14 +8,14 @@ const StyleTable = styled.div`
     font-weight: 400;
     font-size: 30px;
     margin-bottom: 2rem;
-    color: var(--primary);
+    color: #06d6a0;
   }
   .top__deskripsi {
     font-family: Poppins;
     margin-top: -1.5rem;
     font-size: 15px;
 
-    color: var(--secondry);
+    color: #118ab2;
   }
   .table__container {
     border-collapse: collapse;
@@ -50,7 +50,7 @@ const StyleTable = styled.div`
   }
 
   .th {
-    background-color: var(--primary);
+    background-color: #06d6a0;
     color: white;
     border-top: 1px solid #ddd;
     border-left: 1px solid #ddd;
