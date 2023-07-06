@@ -1,5 +1,5 @@
 import Herro from '../components/Herro';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import ENPOINTS from '../utils/constants/enpoints';
 import Regions from '../components/Regions';
@@ -11,10 +11,7 @@ function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    async function fetchData() {
-      await getGlobal();
-    }
-    fetchData();
+    getGlobal();
   }, []);
 
   async function getGlobal() {
