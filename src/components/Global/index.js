@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import Indo from '../Indo.js';
 import { styled } from 'styled-components';
 import store from '../store/index.js';
+import StyleColor from '../Indo.js/card.modules.js';
 const StyleGlobal = styled.div`
   padding: 1rem;
   margin: 0 auto;
@@ -59,13 +60,15 @@ const DataGlobal = (props) => {
           <h1>{props.title}</h1>
           <p className="indo__deskripsi">Data Covid Berdasarkan Data Global</p>
         </div>
-        {/* <p>{indonesia.last_update}</p> */}
-        <div className="indo__bottom">
-          {gloCovid.global &&
-            gloCovid.global.map((indo, index) => {
-              return <Indo key={index} indo={indo} />;
-            })}
-        </div>
+        <StyleColor>
+          {/* <p>{indonesia.last_update}</p> */}
+          <div className="indo__bottom">
+            {gloCovid.global &&
+              gloCovid.global.map((indo, index) => {
+                return <Indo key={index} indo={indo} />;
+              })}
+          </div>
+        </StyleColor>
       </section>
     </StyleGlobal>
   );
